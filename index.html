@@ -24,7 +24,8 @@ function geoFindMe() {
     const longitude = position.coords.longitude;
 
     status.textContent = "";
-    mapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=true#19.22/${latitude}/${longitude}';
+    mapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=true#19.22/51.9539171/-0.263916';
+    
     mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
   }
 
