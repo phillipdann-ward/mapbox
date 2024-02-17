@@ -11,11 +11,15 @@
 
     <hr>
 
-<FORM NAME="myform" ACTION="" METHOD="GET">Latitude (decimal degrees): <BR>
-<INPUT TYPE="text" NAME="inputboxlat" VALUE=""><P>
-<FORM NAME="myform" ACTION="" METHOD="GET">Longitude (decimal degrees): <BR>
-  <INPUT TYPE="text" NAME="inputboxlon" VALUE=""><P>
-<INPUT TYPE="button" NAME="button" Value="Set this location" onClick="testResults(this.form)">
+<FORM>
+<p>
+  <Latitude: <INPUT TYPE="text" NAME="inputboxlat">
+</p>
+  <p>
+ Longitude: <INPUT TYPE="text" NAME="inputboxlon">
+  </p>
+<INPUT TYPE="submit" NAME="submit" Value="Set this location" onClick="testResults(this.form)">
+</FORM>
     
 <hr>
     <p>...or browse the OMO Blue Dot map below....</p>
@@ -58,6 +62,8 @@ document.querySelector("#find-me").addEventListener("click", geoFindMe);
     var Varlat = form.inputboxlat;
      var Varlon = form.inputboxlon;
       const othermapLink = document.querySelector("#othermap-link");
+    Varlat;
+    Varlon;
 
       othermapLink.href = "";
   othermapLink.textContent = "";
