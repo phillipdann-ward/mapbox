@@ -15,7 +15,7 @@
 <INPUT TYPE="text" NAME="inputboxlat" VALUE=""><P>
 <FORM NAME="myform" ACTION="" METHOD="GET">Longitude (decimal degrees): <BR>
   <INPUT TYPE="text" NAME="inputboxlon" VALUE=""><P>
-<INPUT TYPE="button" NAME="button" Value="Set this location" onClick="testResults(this.myform)">
+<INPUT TYPE="button" NAME="button" Value="Set this location" onClick="testResults(this.form)">
     
 <hr>
     <p>...or browse the OMO Blue Dot map below....</p>
@@ -35,7 +35,7 @@ function geoFindMe() {
 
     status.textContent = "";
     
-       mapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#19.22/${latitude}/${longitude}`;
+       mapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#21/${latitude}/${longitude}`;
  
     mapLink.textContent = `Lat/Long (decimal degrees): ${latitude},${longitude} Click here to see a map (inc. OMO Blue Dots) centred on your location`;
   }
@@ -61,9 +61,9 @@ document.querySelector("#find-me").addEventListener("click", geoFindMe);
 
       othermapLink.href = "";
   othermapLink.textContent = "";
-      mapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=true#19.22/${Varlat}/${Varlon}`;
+      othermapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#21/${Varlat}/${Varlon}`;
  
-    mapLink.textContent = `Lat/Long (decimal degrees): ${Varlat},${Varlon} Click here to see a map (inc. OMO Blue Dots) centred on this location`;
+    othermapLink.textContent = `Lat/Long (decimal degrees): ${Varlat},${Varlon} Click here to see a map (inc. OMO Blue Dots) centred on this location`;
 
   }
 </script>
