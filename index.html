@@ -64,10 +64,11 @@ function geoFindMe() {
 document.querySelector("#find-me").addEventListener("click", geoFindMe);
 
         function testResults (form) {
-    var Varlat = form.inputboxlat;
+     const status = document.querySelector("#otherstatus");
+  const mapLink = document.querySelector("#othermap-link");
+          var Varlat = form.inputboxlat;
      var Varlon = form.inputboxlon;
-      const othermapLink;
-    Varlat;
+     Varlat;
     Varlon;
 
       othermapLink.href = "";
