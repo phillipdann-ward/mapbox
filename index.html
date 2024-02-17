@@ -1,4 +1,4 @@
-ow<!doctype html>
+<!doctype html>
 <html>
   <head>
     <title>This is the title of the webpage!</title>
@@ -11,9 +11,11 @@ ow<!doctype html>
 
     <hr>
 
-       <button id="go-here">Set this location</button><br />
-<p id="status"></p>
-<a id="map-link" target="_blank"></a>
+<FORM NAME="myform" ACTION="" METHOD="GET">Latitude (decimal degrees): <BR>
+<INPUT TYPE="text" NAME="inputboxlat" VALUE=""><P>
+<FORM NAME="myform" ACTION="" METHOD="GET">Longitude (decimal degrees): <BR>
+  <INPUT TYPE="text" NAME="inputboxlon" VALUE=""><P>
+<INPUT TYPE="button" NAME="button" Value="Click" onClick="testResults(this.form)">
     
 <hr>
     <p>Browse the OMO Blue Dot map below....</p>
@@ -34,7 +36,7 @@ function geoFindMe() {
     
        mapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=true#19.22/${latitude}/${longitude}`;
  
-    mapLink.textContent = `Lat/Long (decimal degrees): ${latitude},${longitude} Click here to see OMO Blue Dots centred on your location`;
+    mapLink.textContent = `Lat/Long (decimal degrees): ${latitude},${longitude} Click here to see a map (inc. OMO Blue Dots) centred on your location`;
   }
 
   function error() {
@@ -50,6 +52,11 @@ function geoFindMe() {
 }
 
 document.querySelector("#find-me").addEventListener("click", geoFindMe);
+
+  function testResults (form) {
+    var Varlat = form.inputboxlat;
+     var Varlat = form.inputboxlon;
+  }
 </script>
   </body>
 </html>
