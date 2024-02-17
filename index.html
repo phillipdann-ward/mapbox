@@ -2,6 +2,22 @@
 <html>
   <head>
     <title>This is the title of the webpage!</title>
+    <script LANGUAGE="JavaScript">
+        function testResults (form) {
+    var Varlat = form.inputboxlat;
+     var Varlon = form.inputboxlon;
+      const othermapLink;
+    Varlat;
+    Varlon;
+
+      othermapLink.href = "";
+  othermapLink.textContent = "";
+      othermapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#21/${Varlat}/${Varlon}`;
+ 
+    othermapLink.textContent = `Lat/Long (decimal degrees): ${Varlat},${Varlon} Click here to see a map (inc. OMO Blue Dots) centred on this location`;
+
+  }
+    </script>
   </head>
   <body>
 
@@ -58,20 +74,7 @@ function geoFindMe() {
 
 document.querySelector("#find-me").addEventListener("click", geoFindMe);
 
-  function testResults (form) {
-    var Varlat = form.inputboxlat;
-     var Varlon = form.inputboxlon;
-      const othermapLink = document.querySelector("#othermap-link");
-    Varlat;
-    Varlon;
 
-      othermapLink.href = "";
-  othermapLink.textContent = "";
-      othermapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#21/${Varlat}/${Varlon}`;
- 
-    othermapLink.textContent = `Lat/Long (decimal degrees): ${Varlat},${Varlon} Click here to see a map (inc. OMO Blue Dots) centred on this location`;
-
-  }
 </script>
   </body>
 </html>
