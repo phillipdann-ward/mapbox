@@ -4,10 +4,9 @@
     <title>This is the title of the webpage!</title>
   </head>
   <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appsgsgear on the page, just like this <strong>p</strong> tag and its contents.</p>
-<iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#14.47/51.93893/-0.24164" title="Streets-copy-copy-copy" style="border:none;"></iframe>
+    <a href="https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#14.47/51.93893/-0.24164">Browse OMO Blue Dots</a>
 
-<button id="find-me">Show my location</button><br />
+    <button id="find-me">Show my location</button><br />
 <p id="status"></p>
 <a id="map-link" target="_blank"></a>
 
@@ -27,7 +26,7 @@ function geoFindMe() {
     
        mapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=true#19.22/${latitude}/${longitude}`;
  
-    mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+    mapLink.textContent = `Lat/Long (decimal degrees): ${latitude},${longitude} Click here to see OMO Blue Dots centred on your location`;
   }
 
   function error() {
