@@ -15,7 +15,7 @@
 <INPUT TYPE="text" NAME="inputboxlat" VALUE=""><P>
 <FORM NAME="myform" ACTION="" METHOD="GET">Longitude (decimal degrees): <BR>
   <INPUT TYPE="text" NAME="inputboxlon" VALUE=""><P>
-<INPUT TYPE="button" NAME="button" Value="Click" onClick="testResults(this.form)">
+<INPUT TYPE="button" NAME="button" Value="Set this location" onClick="testResults(this.form)">
     
 <hr>
     <p>...or browse the OMO Blue Dot map below....</p>
@@ -24,6 +24,7 @@
 function geoFindMe() {
   const status = document.querySelector("#status");
   const mapLink = document.querySelector("#map-link");
+
 
   mapLink.href = "";
   mapLink.textContent = "";
@@ -55,7 +56,15 @@ document.querySelector("#find-me").addEventListener("click", geoFindMe);
 
   function testResults (form) {
     var Varlat = form.inputboxlat;
-     var Varlat = form.inputboxlon;
+     var Varlon = form.inputboxlon;
+      const othermapLink = document.querySelector("#othermap-link");
+
+      othermapLink.href = "";
+  othermapLink.textContent = "";
+      mapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=true#19.22/${Varlat}/${Varlon}`;
+ 
+    mapLink.textContent = `Lat/Long (decimal degrees): ${Varlat},${Varlon} Click here to see a map (inc. OMO Blue Dots) centred on this location`;
+
   }
 </script>
   </body>
