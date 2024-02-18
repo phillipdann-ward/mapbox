@@ -54,6 +54,9 @@ document.querySelector("#find-me").addEventListener("click", geoFindMe);
 
      function setThis () {
         const othermapLink = document.querySelector("#othermap-link");
+
+         othermapLink.href = "";
+  othermapLink.textContent = "";
        var lat = prompt("Latitude");
        var lon = prompt("Longitude");
 
