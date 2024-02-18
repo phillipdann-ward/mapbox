@@ -2,72 +2,69 @@
 <html>
   <head>
     <title>This is the title of the webpage!</title>
-
   </head>
   <body>
-
     <button id="find-me">Get my location</button><br />
-<p id="status"></p>
-<a id="map-link" target="_blank"></a>
+    <p id="status"></p>
+    <a id="map-link" target="_blank"></a>
 
     <hr>
 
     <button id="set-this">Set location</button><br />
-<a id="othermap-link" target="_blank"></a>
+    <a id="othermap-link" target="_blank"></a>
     
-<hr>
+    <hr>
+    
     <p>...or browse the OMO Blue Dot map below....</p>
     <iframe width='100%' height='800px' src="https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=true#14.47/51.93893/-0.24164" title="OMO Blue Dots" style="border:none;"></iframe>
-<script>
-function geoFindMe() {
-  const status = document.querySelector("#status");
-  const mapLink = document.querySelector("#map-link");
 
+    <script>
 
-  mapLink.href = "";
-  mapLink.textContent = "";
+      function geoFindMe() {
+        const status = document.querySelector("#status");
+        const mapLink = document.querySelector("#map-link");
 
-  function success(position) {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
+        mapLink.href = "";
+        mapLink.textContent = "";
 
-    status.textContent = "";
-    
-       mapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#21/${latitude}/${longitude}`;
- 
-    mapLink.textContent = `Lat/Long (decimal degrees): ${latitude},${longitude} Click here to see a map (inc. OMO Blue Dots) centred on your location`;
-  }
+        function success(position) {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+  
+          status.textContent = "";
+          mapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#21/${latitude}/${longitude}`;
+          mapLink.textContent = `Lat/Long (decimal degrees): ${latitude},${longitude} Click here to see a map (inc. OMO Blue Dots) centred on your location`;
+        }
+  
+        function error() {
+          status.textContent = "Unable to retrieve your location";
+        }
 
-  function error() {
-    status.textContent = "Unable to retrieve your location";
-  }
+        if (!navigator.geolocation) {
+          status.textContent = "Geolocation is not supported by your browser";
+        } else {
+          status.textContent = "Locating…";
+          navigator.geolocation.getCurrentPosition(success, error);
+        }
+      }
 
-  if (!navigator.geolocation) {
-    status.textContent = "Geolocation is not supported by your browser";
-  } else {
-    status.textContent = "Locating…";
-    navigator.geolocation.getCurrentPosition(success, error);
-  }
-}
+      document.querySelector("#find-me").addEventListener("click", geoFindMe);
 
-document.querySelector("#find-me").addEventListener("click", geoFindMe);
-
-     function setThis () {
+      function setThis () {
         const othermapLink = document.querySelector("#othermap-link");
 
-         othermapLink.href = "";
-  othermapLink.textContent = "";
-       var lat = prompt("Latitude");
-       var lon = prompt("Longitude");
+        othermapLink.href = "";
+        othermapLink.textContent = "";
+        
+        var lat = prompt("Latitude");
+        var lon = prompt("Longitude");
 
-      othermapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#21/$(lat}/${lon}`;
- 
-    othermapLink.textContent = `Lat/Long (decimal degrees): ${Varlat},${Varlon} Click here to see a map (inc. OMO Blue Dots) centred on this location`;
+        othermapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#21/$(lat}/${lon}`;
+        othermapLink.textContent = `Lat/Long (decimal degrees): ${lat},${lon} Click here to see a map (inc. OMO Blue Dots) centred on this location`;
+      }
 
-  }
+      document.querySelector("#set-this").addEventListener("click", setThis);
 
-  document.querySelector("#set-this").addEventListener("click", setThis);
-
-</script>
+    </script>
   </body>
 </html>
