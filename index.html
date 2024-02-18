@@ -12,25 +12,8 @@
 
     <hr>
 
-<FORM>
-  Latitude: <INPUT TYPE="text" NAME="inputboxlat" id="inputboxlat"><br>
- Longitude: <INPUT TYPE="text" NAME="inputboxlon" id="inputboxlon"><br>
-  <button on_click="testResults(inputboxlat,inputboxlon)">Set this location</button>
-</FORM>
-    <script>
-     function testResults (lat,lon) {
-          lat;
-    lon;
-        const othermapLink = document.querySelector("#map-link");
-
-      othermapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#21/$(lat}/${lon}`;
- 
-    othermapLink.textContent = `Lat/Long (decimal degrees): ${Varlat},${Varlon} Click here to see a map (inc. OMO Blue Dots) centred on this location`;
-
-  }
-    </script>
-
-  
+    <button id="set-this">Set location</button><br />
+<a id="othermap-link" target="_blank"></a>
     
 <hr>
     <p>...or browse the OMO Blue Dot map below....</p>
@@ -69,7 +52,19 @@ function geoFindMe() {
 
 document.querySelector("#find-me").addEventListener("click", geoFindMe);
 
-       
+     function setThis () {
+        const othermapLink = document.querySelector("#othermap-link");
+       var lat = prompt("Latitude");
+       var lon = prompt("Longitude");
+
+      othermapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#21/$(lat}/${lon}`;
+ 
+    othermapLink.textContent = `Lat/Long (decimal degrees): ${Varlat},${Varlon} Click here to see a map (inc. OMO Blue Dots) centred on this location`;
+
+  }
+
+  document.querySelector("#set-this").addEventListener("click", setThis);
+
 </script>
   </body>
 </html>
