@@ -44,11 +44,7 @@
           status.textContent = "Geolocation is not supported by your browser";
         } else {
           status.textContent = "Locating…";
-          navigator.geolocation.getCurrentPosition(success, error, {
-   enableHighAccuracy: true,
-   timeout: 20000,
-  maximumAge: 0
- });
+          navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true, timeout: 20000, maximumAge: 0});
         }
       }
 
