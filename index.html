@@ -35,7 +35,7 @@
   
           status.textContent = "";
           mapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clna8zs2y03h501quco465lk9.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=true#21/${latitude}/${longitude}`;
-          mapLink.textContent = `Lat/Long (decimal degrees): ${latitude},${longitude} Click here to see a map (inc. OMO Blue Dots) centred on your location`;
+          mapLink.textContent = `Lat/Long (decimal degrees): ${latitude},${longitude} Click here to see the railway map centred on your location`;
         }
   
         function error() {
@@ -62,7 +62,7 @@
         var lon = prompt("Longitude");
 
         othermapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clna8zs2y03h501quco465lk9.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=true#21/${lat}/${lon}`;
-        othermapLink.textContent = `Lat/Long (decimal degrees): ${lat},${lon} Click here to see a map (inc. OMO Blue Dots) centred on this location`;
+        othermapLink.textContent = `Lat/Long (decimal degrees): ${lat},${lon} Click here to see the railway map centred on this location`;
       }
 
       document.querySelector("#set-this").addEventListener("click", setThis);
