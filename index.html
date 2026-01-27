@@ -16,7 +16,7 @@
     <hr>
     
     <p>...or browse the OMO Blue Dot map below....</p>
-    <iframe width='100%' height='800px' src="https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=true#14.47/51.93893/-0.24164" title="OMO Blue Dots" style="border:none;"></iframe>
+    <iframe width='100%' height='800px' src="https://api.mapbox.com/styles/v1/phildannward/clna8zs2y03h501quco465lk9/wmts?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=true#14.47/51.93893/-0.24164" title="OMO Blue Dots" style="border:none;"></iframe>
 
     <script>
 
@@ -32,7 +32,7 @@
           const longitude = position.coords.longitude;
   
           status.textContent = "";
-          mapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#21/${latitude}/${longitude}`;
+          mapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clna8zs2y03h501quco465lk9.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=true#21/${latitude}/${longitude}`;
           mapLink.textContent = `Lat/Long (decimal degrees): ${latitude},${longitude} Click here to see a map (inc. OMO Blue Dots) centred on your location`;
         }
   
@@ -59,7 +59,7 @@
         var lat = prompt("Latitude");
         var lon = prompt("Longitude");
 
-        othermapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clsouksxf009601pkbyfa52wg.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=false#21/${lat}/${lon}`;
+        othermapLink.href = `https://api.mapbox.com/styles/v1/phildannward/clna8zs2y03h501quco465lk9.html?title=false&access_token=pk.eyJ1IjoicGhpbGRhbm53YXJkIiwiYSI6ImNsbXphenpmdzAxc3AycWxqb2lvNGc3dHgifQ.eFaB5d4G93RRRQe0m2E8Eg&zoomwheel=true#21/${lat}/${lon}`;
         othermapLink.textContent = `Lat/Long (decimal degrees): ${lat},${lon} Click here to see a map (inc. OMO Blue Dots) centred on this location`;
       }
 
